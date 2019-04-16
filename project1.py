@@ -5,7 +5,7 @@ from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt 
 import pandas as pd 
   
-# Reads 'Youtube04-Eminem.csv' file  
+# Reads 'Chicago_Crimes_2012_to_2017.csv' file  
 df = pd.read_csv(r"Chicago_Crimes_2012_to_2017.csv", encoding ="latin-1") 
   
 comment_words = ' '
@@ -25,7 +25,7 @@ for val in df.CONTENT:
         tokens[i] = tokens[i].lower() 
           
     for words in tokens: 
-    comment_words = comment_words + words + ' '
+        comment_words = comment_words + words + ' '
   
   
 wordcloud = WordCloud(width = 800, height = 800, 
@@ -39,4 +39,4 @@ plt.imshow(wordcloud)
 plt.axis("off") 
 plt.tight_layout(pad = 0) 
   
-plt.show() 
+plt.show()
