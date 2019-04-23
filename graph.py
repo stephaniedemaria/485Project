@@ -11,8 +11,11 @@ def get_candidate(row):
     if "moron" in text:
         candidates.append("moron")
     return ",".join(candidates)
-tweets["candidate"] = tweet.apply(get_candidate,axis=1)
+tweets["candidate"] = tweets.apply(get_candidate,axis=1)
 
+counts = tweets["candidate"].value_counts()
+plt.bar(range(len(counts)), counts)
+plt.show()print(counts)
 
 # Make a fake dataset:
 height = [3, 12, 5, 18, 45]
