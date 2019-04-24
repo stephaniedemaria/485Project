@@ -1,0 +1,8 @@
+python-twitter
+numpy
+matplotlib
+tweepy
+plotly
+pandas
+nltk
+
