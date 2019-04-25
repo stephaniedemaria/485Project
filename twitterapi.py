@@ -12,7 +12,7 @@ search = api.GetSearch("happy") # Replace happy with your search
 for tweet in search: 
     print(tweet.id, tweet.text)
 
-t = api.GetUserTimeline(screen_name="RealDonaldTrump", count=10)
+t = api.GetUserTimeline(screen_name="RealDonaldTrump", count=100)
 
 tweets = [i.AsDict() for i in t]
 
