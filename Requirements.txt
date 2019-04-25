@@ -5,3 +5,4 @@ tweepy
 plotly or seaborn 
 pandas
 nltk
+pillow
