@@ -1,33 +1,16 @@
-import pandas as pd
-tweets = pd.read_csv("archive.csv")
-tweets.head()
-
-import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
-def get_candidate(row):
-    candidates = []
-    text = row["text"].lower()
-    if "moron" in text:
-        candidates.append("moron")
-    return ",".join(candidates)
-tweets["candidate"] = tweets.apply(get_candidate,axis=1)
+headers = ['Word', 'Frequency']
 
-counts = tweets["candidate"].value_counts()
-plt.bar(range(len(counts)), counts)
-plt.show()print(counts)
+df = pd.read_csv('trumpwords.csv', delimiter=",", names=headers)
+x = df['Word']
+y = df['Frequency']
 
-# Make a fake dataset:
-height = [3, 12, 5, 18, 45]
-bars = ('A', 'B', 'C', 'D', 'E')
-y_pos = np.arange(len(bars))
- 
-# Create bars
-plt.bar(y_pos, height)
- 
-# Create names on the x-axis
-plt.xticks(y_pos, bars)
- 
-# Show graphic
+plt.bar(x, y)
+plt.xlabel('Bad Word')
+plt.ylabel('Number of times used')
+plt.title('Frequency of bad words used in Trump tweets')
 plt.show()
- 
+
+
