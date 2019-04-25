@@ -2,7 +2,6 @@ python-twitter
 numpy
 matplotlib
 tweepy
-plotly
+plotly or seaborn 
 pandas
 nltk
-
