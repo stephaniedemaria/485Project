@@ -10,8 +10,8 @@ import os
 #You need to do this step once
 #nltk.download_gui()
 
-#set path of data files
-path = 'C:/Users/mstad/pyscripts/fastfoodtweets/'
+#set path of data files...change the path on your computer in order for this to run
+path = 'C:/Users/West/Documents/OMIS 485 Project/485Project/archive.csv'
 
 #create empty list sentences
 sentence = ""

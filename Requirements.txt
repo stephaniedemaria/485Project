@@ -2,7 +2,8 @@ python-twitter
 numpy
 matplotlib
 tweepy
-plotly or seaborn 
+plotly
 pandas
 nltk
 pillow
+wordcloud
