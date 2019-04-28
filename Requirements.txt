@@ -8,3 +8,4 @@ nltk #download punkt, wordnet, stopwords >>>> nltk.download_gui()
 pillow
 wordcloud
 stopwords
+textblob
