@@ -2,10 +2,10 @@ import nltk
 from nltk.corpus import stopwords
 #from nltk.corpus import wordnet
 import string
-from wordcloud import WordCloud, ImageColorGenerator
+from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import os
-from os import path, getcwd
+from os import path
 from PIL import Image
 import numpy as np
 
@@ -16,8 +16,13 @@ import numpy as np
 
 
 #set path of data files...change the path on your computer in order for this to run
-path = '/Users/emilyalvarado/Documents/GitHub/485Project/archive'
-donaldmask = np.array(Image.open(path, "donald.png")))
+
+d = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+text = open(path.join(d,'donald.png')).read()
+
+donald_mask = np.array(Image.open(path.join(d,"donald.png")))
+
+
 
 #create empty list sentences
 sentence = ""
@@ -80,14 +85,16 @@ wordfreqdist = nltk.FreqDist(tokens)
 mostcommon = wordfreqdist.most_common(400)
 print(mostcommon)
 
+wc = WordCloud(background_color="white", max_words=2000, mask=donald_mask,
+               stopwords=stopwords, contour_width=3, contour_color='steelblue')
 
-#Wordcloud
-wordcloud = WordCloud(background_color="white", width=1200,height=1000,
-max_words=400, mask=donaldmask, collocations=False).generate(sentence)
-image_colors = ImageColorGenerator(donaldmask)
-fig, axes = plt.subplots(1, 3)
-axes[0].imshow(wordcloud, interpolation="bilinear")
-axes[1].imshow(wordcloud.recolor(color_func=image_colors), interpolation="bilinear")
-for ax in axes:
-    ax.set_axis_off()
+wc.generate(text)
+wc.to_file(path.join(d, "donaldt.png"))
+
+# show
+plt.imshow(wc, interpolation='bilinear')
+plt.axis("off")
+plt.figure()
+plt.imshow(donald_mask, interpolation='bilinear')
+plt.axis("off")
 plt.show()
