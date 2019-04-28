@@ -7,11 +7,12 @@ import matplotlib.pyplot as plt
 import os
 
 #Models menu -> select punckt -> click download
-#You need to do this step once
-#nltk.download_gui()
+#Also download stopwords and wordnet
+#nltk.download_gui() 
 
-#set path of data files...change the path on your computer in order for this to run
-path = 'C:/Users/West/Documents/OMIS 485 Project/485Project/archive'
+
+#Copy path from archive file but don't include csv
+path = '/Users/emilyalvarado/Documents/GitHub/485Project/archive'
 
 #create empty list sentences
 sentence = ""
@@ -71,12 +72,12 @@ for token in tokens:
 print("@@@@Give me word frequency distribution@@@@")
 print(tokens)
 wordfreqdist = nltk.FreqDist(tokens)
-mostcommon = wordfreqdist.most_common(10)
+mostcommon = wordfreqdist.most_common(400)
 print(mostcommon)
 
 #Wordcloud
 wordcloud = WordCloud(width=1200,height=1000,
-max_words=10,collocations=False).generate(sentence)
+max_words=400,collocations=False).generate(sentence)
 plt.figure( figsize=(20,10), facecolor='k' )
 plt.imshow(wordcloud)
 plt.axis("off")
