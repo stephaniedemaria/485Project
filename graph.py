@@ -10,7 +10,7 @@ y = df['Frequency']
 plt.bar(x, y)
 plt.xlabel('Bad Word')
 plt.ylabel('Number of times used')
-plt.title('Frequency of bad words used in Trump's tweets')
+plt.title('Frequency of bad words used in Trump tweets')
 plt.show()
 
 

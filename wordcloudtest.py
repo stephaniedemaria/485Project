@@ -5,14 +5,24 @@ import string
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import os
+from os import path
+from PIL import Image
+import numpy as np
+
 
 #Models menu -> select punckt -> click download
-#Also download stopwords and wordnet
-#nltk.download_gui() 
+#You need to do this step once
+#nltk.download_gui()
 
 
-#Copy path from archive file but don't include csv
-path = '/Users/emilyalvarado/Documents/GitHub/485Project/archive'
+#set path of data files...change the path on your computer in order for this to run
+
+d = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+text = open(path.join(d,'donald.png')).read()
+
+donald_mask = np.array(Image.open(path.join(d,"donald.png")))
+
+
 
 #create empty list sentences
 sentence = ""
@@ -75,11 +85,16 @@ wordfreqdist = nltk.FreqDist(tokens)
 mostcommon = wordfreqdist.most_common(400)
 print(mostcommon)
 
-#Wordcloud
-wordcloud = WordCloud(width=1200,height=1000,
-max_words=400,collocations=False).generate(sentence)
-plt.figure( figsize=(20,10), facecolor='k' )
-plt.imshow(wordcloud)
+wc = WordCloud(background_color="white", max_words=2000, mask=donald_mask,
+               stopwords=stopwords, contour_width=3, contour_color='steelblue')
+
+wc.generate(text)
+wc.to_file(path.join(d, "donaldt.png"))
+
+# show
+plt.imshow(wc, interpolation='bilinear')
 plt.axis("off")
-plt.tight_layout(pad=0)
+plt.figure()
+plt.imshow(donald_mask, interpolation='bilinear')
+plt.axis("off")
 plt.show()
