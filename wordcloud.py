@@ -76,8 +76,8 @@ mostcommon = wordfreqdist.most_common(400)
 print(mostcommon)
 
 #Wordcloud
-wordcloud = WordCloud(width=1200,height=1000,
-max_words=400,collocations=False).generate(sentence)
+wordcloud = WordCloud(background_color="white",width=1200,height=1000,
+max_words=400,collocations=False,stopwords= stopwords.words("english")).generate(sentence)
 plt.figure( figsize=(20,10), facecolor='k' )
 plt.imshow(wordcloud)
 plt.axis("off")
