@@ -6,6 +6,7 @@ import numpy as np
 import csv
 from PIL import Image
 import string
+import random
 from wordcloud import WordCloud, ImageColorGenerator
 import matplotlib.pyplot as plt
 import os
@@ -78,15 +79,16 @@ wordfreqdist = nltk.FreqDist(tokens)
 mostcommon = wordfreqdist.most_common(4000)
 print(mostcommon)
 
-#mask = np.array(Image.open("/Users/emilyalvarado/Sites/485Project/donald.png"))
-mask =np.array(Image.open("/Users/emilyalvarado/Sites/485Project/trump1.png"))
+def orange_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+    return "hsl(24, 99%%, %d%%)" % random.randint(40, 70)
+
+mask =np.array(Image.open("/Users/emilyalvarado/Sites/485Project/donaldt.png"))
 wordcloud = WordCloud(background_color="white",
-                        random_state=5,
                         max_words=400,
                         mask=mask,
+                        random_state=5,
                         stopwords= stopwords.words("english")
 ).generate(sentence)
-image_colors = ImageColorGenerator(mask)
-plt.imshow(wordcloud.recolor(color_func=image_colors))
+plt.imshow(wordcloud.recolor(color_func=orange_color_func, random_state=5))
 plt.axis("off")
 plt.show()
