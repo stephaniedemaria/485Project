@@ -8,4 +8,4 @@ pillow
 wordcloud #make sure it is in the correct env
 stopwords
 textblob
-scripy 
+scipy 
