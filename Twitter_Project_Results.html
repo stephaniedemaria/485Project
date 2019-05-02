@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Results</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background-color:#33C6FF; 
+	background-image: url('https://stephaniedemaria.github.io/485Project/images/Twitter_Header.png');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 1500px 130px;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+li {
+	float: left;
+}
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.column {
+	float: left;
+	width: 45%;
+	padding: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+<body>
+<br><br><br><br><br><br>
+<ul>
+	<li><a href="Twitter_Project_Home.html">Home</a></li>
+	<li><a href="Twitter_Project_Description.html">Project Description</a></li>
+	<li><a href="Twitter_Project_Results.html">Results</a></li>
+</ul>
+
+<div class="row">
+  <div class="column">
+	<h1 style="text-align:left;">Twitter Analysis Results</h1>
+	<p style="text-align:left;">
+	<a href="https://github.com/stephaniedemaria/485Project" target="_blank">Please click here to visit our Github Repo!</a>
+	<br><br>
+	The results of our project include a sentiment analysis using Twitter API, graphs, and wordclouds to illustrate Trump's tweets.
+	The video that we posted to Flipgrid explains these features in more detail and our source code is posted on our Github repo.
+	To follow along with our code, you will need to satisfy the requirements that are outlined on our repository's requirements.txt file.
+	This txt file lists all the additional items that need to be downloaded to follow along with our project.
+	The readme file on our Github repo provides detailed instructions as to how to follow along with the project so please check that file out as well!
+	<br><br>
+	To the right, the results of our sentiment analysis are showcased. 
+	The percentage of positive and negative tweets are first displayed.
+	Those are followed by a sample of the actual tweets catagorized by positive or negative.
+	The query itself can be changed as well as the sample size.
+	<br><br>
+	The graph and wordcloud are featured below.
+	Our graph shows a comparison of the amount of negative words Trump has tweeted as president vs all time.
+	As shown below, his use of negative words as president is much less than his use of the words historically.
+	The only outlier to this is the word "witch hunt" as the use of this word during his presidency is very similar to his all time use of the word.
+	<br><br>
+	Our wordcloud is featured to the right of the graph and displays his most frequently used words.
+	As shown by the wordcloud his top words are actually positive.
+	For example, his top words are "great", "amp", and "new".
+	These words all express a positive sentiment and this finding aligns with our chart's finding of trump using less negative words since his presidency started.
+	
+	</p>
+	<img src="https://stephaniedemaria.github.io/485Project/images/TwitterGraph.PNG" alt="Graph" width="600" height="400">
+  </div>
+  <div class="column">
+	<img src="https://stephaniedemaria.github.io/485Project/images/SentimentResults.PNG" alt="Sentiment Analysis" width="800" height="500"><br>
+	<br>
+	<img src="https://stephaniedemaria.github.io/485Project/images/wordcloud.png" alt="wordcloud" width="600" height="600">
+  </div>
+</div>
+<footer>
+<br><br><br>
+<img src="https://stephaniedemaria.github.io/485Project/images/niufooter.png" alt="Footer" style="height:100px;width:550px;float:left;padding:20px;">
+</footer>
+</body>
+</html>
