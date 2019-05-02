@@ -2,10 +2,10 @@ python-twitter
 numpy
 matplotlib
 tweepy
-plotly
 pandas
 nltk #download punkt, wordnet, stopwords >>>> nltk.download_gui()
 pillow
-wordcloud
+wordcloud #make sure it is in the correct env
 stopwords
 textblob
+scripy 
