@@ -1,7 +1,7 @@
 #####We could not finish this in time because of env issues 
 import nltk
 from nltk.corpus import stopwords
-#from nltk.corpus import wordnet
+#from nltk.corpus import wordnet/stopwords/punckt
 import numpy as np
 import csv
 from PIL import Image
@@ -10,10 +10,6 @@ import random
 from wordcloud import WordCloud, ImageColorGenerator
 import matplotlib.pyplot as plt
 import os
-
-#Models menu -> select punckt -> click download
-#Also download stopwords and wordnet
-#nltk.download_gui() 
 
 #Copy path from archive file but don't include csv
 path = '/Users/emilyalvarado/Documents/GitHub/485Project/archive'
@@ -62,7 +58,6 @@ for token in tokens:
     token = stemmer.stem(token)
     print(token)
 
-#nltk.download('wordnet')#Another way of downloading package instead of GUI
 #Lemmatization
 print("Lemmatize Tokens")
 from nltk.stem import WordNetLemmatizer
