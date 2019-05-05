@@ -55,7 +55,7 @@ for token in tokens:
 print("Remove stop words:",tokens)
 
 #Stemming
-print("****Let's stem tokens:****")
+print("Stemming Tokens")
 stemmer = nltk.stem.SnowballStemmer('english')
 for token in tokens:
     print(token,"becomes ",end='')
@@ -64,7 +64,7 @@ for token in tokens:
 
 #nltk.download('wordnet')#Another way of downloading package instead of GUI
 #Lemmatization
-print("####Let's lemmatize tokens:####")
+print("Lemmatize Tokens")
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 for token in tokens:
@@ -73,18 +73,19 @@ for token in tokens:
     print(token)
         
 #Word frequency distribution
-print("@@@@Give me word frequency distribution@@@@")
+print("Word Frequency")
 print(tokens)
 wordfreqdist = nltk.FreqDist(tokens)
-mostcommon = wordfreqdist.most_common(4000)
+mostcommon = wordfreqdist.most_common(10000)
 print(mostcommon)
+
 
 def orange_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
     return "hsl(24, 99%%, %d%%)" % random.randint(40, 70)
 
-mask =np.array(Image.open("/Users/emilyalvarado/Sites/485Project/don.png"))
+mask =np.array(Image.open("/Users/emilyalvarado/Documents/GitHub/485Project/images/donald.jpg"))
 wordcloud = WordCloud(background_color="white",
-                        max_words=400,
+                        max_words=600,
                         mask=mask,
                         random_state=5,
                         stopwords= stopwords.words("english")
