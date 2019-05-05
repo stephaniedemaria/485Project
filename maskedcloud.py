@@ -82,7 +82,7 @@ print(mostcommon)
 def orange_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
     return "hsl(24, 99%%, %d%%)" % random.randint(40, 70)
 
-mask =np.array(Image.open("/Users/emilyalvarado/Sites/485Project/donaldt.png"))
+mask =np.array(Image.open("/Users/emilyalvarado/Sites/485Project/don.png"))
 wordcloud = WordCloud(background_color="white",
                         max_words=400,
                         mask=mask,
